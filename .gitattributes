@@ -1,0 +1,273 @@
+# defaults for all files:
+#   auto-detect text vs. binary, overriding core.autocrlf
+#   use core.eol (default=native) line endings in text files in the worktree
+* text=auto !eol
+
+# normalize line endings to LF on checkin and always convert to CRLF on checkout
+*.csproj           text        eol=crlf  merge=union
+*.sln              text        eol=crlf  merge=union
+
+*.bat              text        eol=crlf
+*.cmd              text        eol=crlf
+*.dbproj           text        eol=crlf
+*.filters          text        eol=crlf
+*.fsproj           text        eol=crlf
+*.ics              text        eol=crlf
+*.lsproj           text        eol=crlf
+*.modelproj        text        eol=crlf
+*.props            text        eol=crlf
+*.ps1              text        eol=crlf
+*.sqlproj          text        eol=crlf
+*.vbproj           text        eol=crlf
+*.vcproj           text        eol=crlf
+*.vcxitems         text        eol=crlf
+*.vcxproj          text        eol=crlf
+*.wixproj          text        eol=crlf
+*.wwaproj          text        eol=crlf
+*.xproj            text        eol=crlf
+
+# normalize line endings to LF on checkin and never convert to CRLF on checkout
+*.bash             text        eol=lf    diff=bash
+*.sh               text        eol=lf    diff=bash
+
+*.service          text        eol=lf
+
+package.json       text        eol=lf
+
+*.pbxproj          text        eol=lf    merge=union
+
+# suppress diffs for generated files
+package-lock.json  text        eol=lf    -diff
+yarn.lock          text        eol=lf    -diff
+*.map              text                  -diff
+*.lock             text                  -diff
+
+# normalize line endings to LF on checkin and convert to native on checkout
+*.*ignore          text
+*.*rc              text
+*.Plo              text
+*.S                text
+*.ac               text
+*.am               text
+*.asn              text
+*.build            text
+*.cfg              text
+*.cmake            text
+*.cnf              text
+*.coffee           text
+*.components       text
+*.conf             text
+*.config           text
+*.crt              text
+*.csv              text
+*.def              text
+*.desktop          text
+*.dot              text
+*.dsp              text
+*.gn               text
+*.gni              text
+*.groovy           text
+*.guess            text
+*.gyp              text
+*.gypi             text
+*.hash             text
+*.hbs              text
+*.in               text
+*.inc              text
+*.ini              text
+*.inl              text
+*.jinja            text
+*.js               text
+*.json             text
+*.jst              text
+*.jsx              text
+*.key              text
+*.kt               text
+*.ldif             text
+*.lint             text
+*.ls               text
+*.lua              text
+*.m4               text
+*.mak              text
+*.mako             text
+*.manifest         text
+*.md5              text
+*.mk               text
+*.mm               text
+*.pem              text
+*.plist            text
+*.po               text
+*.pot              text
+*.priv             text
+*.pro              text
+*.properties       text
+*.pub              text
+*.pylint           text
+*.qml              text
+*.regression       text
+*.resx             text
+*.rules            text
+*.service          text
+*.sls              text
+*.sql              text
+*.storyboard       text
+*.strings          text
+*.styl             text
+*.sub              text
+*.svg              text
+*.tab              text
+*.tcl              text
+*.timer            text
+*.tpp              text
+*.ts               text
+*.tsv              text
+*.tsx              text
+*.txt              text
+*.ush              text
+*.usp              text
+*.wsgi             text
+*.xaml             text
+*.xcconfig         text
+*.xcscheme         text
+*.xib              text
+*.xml              text
+*.yaml             text
+*.yml              text
+
+.editorconfig      text
+.gitattributes     text
+.gitconfig         text
+ChangeLog          text
+Dockerfile         text
+Doxyfile           text
+Jamfile            text
+Makefile           text
+SConscript         text
+id_rsa             text
+license            text
+makefile           text
+nextVersion        text
+version            text
+versionTag         text
+
+*AUTHORS*          text
+*CHANGES*          text
+*COPYING*          text
+*COPYRIGHT*        text
+*INSTALL*          text
+*LICENSE*          text
+*README*           text
+
+*.bibtex           text        diff=bibtex
+
+*.c                text        diff=cpp
+*.c++              text        diff=cpp
+*.cc               text        diff=cpp
+*.cpp              text        diff=cpp
+*.cxx              text        diff=cpp
+*.t++              text        diff=cpp
+*.tpp              text        diff=cpp
+*.txx              text        diff=cpp
+*.h                text        diff=cpp
+*.h++              text        diff=cpp
+*.hh               text        diff=cpp
+*.hpp              text        diff=cpp
+
+*.cs               text        diff=csharp
+*.csx              text        diff=csharp
+
+*.css              text        diff=css
+*.scss             text        diff=css
+
+*.cshtml           text        diff=html
+*.htm              text        diff=html
+*.html             text        diff=html
+*.xhtml            text        diff=html
+
+*.gradle           text        diff=java
+*.java             text        diff=java
+
+*.markdown         text        diff=markdown
+*.md               text        diff=markdown
+*.mdown            text        diff=markdown
+*.mdwn             text        diff=markdown
+*.mkd              text        diff=markdown
+*.mkdn             text        diff=markdown
+
+*.m                text        diff=objc
+
+*.pl               text        diff=perl
+*.pm               text        diff=perl
+
+*.php              text        diff=php
+
+*.py               text        diff=python
+
+*.rb               text        diff=ruby
+
+*.swift            text        diff=swift
+
+*.tex              text        diff=tex
+
+*.patch            -text
+
+# never normalize line endings on checkin and never convert on checkout
+# binary is a builtin macro equivalent to: -text -diff -merge
+*.7z               binary
+*.CAB              binary
+*.a                binary
+*.avi              binary
+*.bin              binary
+*.bmp              binary
+*.class            binary
+*.dll              binary
+*.dylib            binary
+*.ear              binary
+*.eot              binary
+*.eps              binary
+*.exe              binary
+*.flv              binary
+*.gif              binary
+*.gifv             binary
+*.gz               binary
+*.ico              binary
+*.jar              binary
+*.jks              binary
+*.jng              binary
+*.jpeg             binary
+*.jpg              binary
+*.lib              binary
+*.m4a              binary
+*.m4v              binary
+*.midi             binary
+*.mov              binary
+*.mp3              binary
+*.mp4              binary
+*.mpeg             binary
+*.mpg              binary
+*.nupkg            binary
+*.o                binary
+*.obj              binary
+*.ogg              binary
+*.ogv              binary
+*.otf              binary
+*.out              binary
+*.pdf              binary
+*.png              binary
+*.pyc              binary
+*.rar              binary
+*.slar             binary
+*.so               binary
+*.svgz             binary
+*.tar              binary
+*.tgz              binary
+*.tif              binary
+*.tiff             binary
+*.ttf              binary
+*.war              binary
+*.wav              binary
+*.webm             binary
+*.webp             binary
+*.woff             binary
+*.woff2            binary
+*.zip              binary
